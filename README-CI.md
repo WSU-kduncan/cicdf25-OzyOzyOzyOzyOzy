@@ -51,17 +51,25 @@ Run the image. Build a container based on the image and check if it works as exp
 
 ### 3. Semantic Versioning
 #### Generating `tag`s 
-    - How to see tags in a `git` repository
-    - How to generate a `tag` in a `git` repository
-    - How to push a tag in a `git` repository to GitHub
+- How to see tags in a `git` repository
+'git tag' will list all tags present in a repo.
+- How to generate a `tag` in a `git` repository
+'git tag "tagName"' ex. 'git tag v1.0' will create tag for the next commit called v1.0.
+- How to push a tag in a `git` repository to GitHub
+'git push origin "tagName"' or 'git push origin --tags' to push all tags.
 #### Semantic Versioning Container Images with GitHub Actions
-    - Explanation of workflow trigger
-    - Explanation of workflow steps
-    - Explanation / highlight of values that need updated if used in a different repository
-      - changes in workflow
-      - changes in repository
-    - **Link** to workflow file in your GitHub repository
+- Explanation of workflow trigger
+This workflow will trigger on any push to main or push with a tag.
+- Explanation of workflow steps
+The workflow steps from the previous sections still apply. The only difference is now the docker action metadata-action will now organize pushes by semantic version, then perform the rest of the steps as in the previous section.
+- Explanation / highlight of values that need updated if used in a different repository
+  - changes in workflow
+Same changes as before. Change the repository name to match the name you are pushing to.
+  - changes in repository
+Make sure the PAT for the workflow is correct and in the git repo's secrets.
+- **Link** to workflow file in your GitHub repository
+![Workflow File](.github/workflows/main.yml)
 #### Testing & Validating
-    - How to test that your workflow did its tasking
-    - How to verify that the image in DockerHub works when a container is run using the image
-    - **Link** to your DockerHub repository with evidence of the tag set
+- How to test that your workflow did its tasking
+- How to verify that the image in DockerHub works when a container is run using the image
+- **Link** to your DockerHub repository with evidence of the tag set
