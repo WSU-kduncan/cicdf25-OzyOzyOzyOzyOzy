@@ -36,7 +36,7 @@ Under Account Settings in Dockerhub, select 'Personal Access Tokens". Then creat
 - How to set repository Secrets for use by GitHub Actions  
 While logged into your repo: Settings -> Security -> Secrets and variables -> Actions -> New repository secret. Name the secret then add the contents. You can call the secrets as a variable in your actions yml files.
 - Describe the Secrets set for this project  
-For this project, my github username and a personal access token specifically made for this project was set in github secrets.
+For this project, my Docker username and a personal access token specifically made for this project was set in github secrets.
 #### CI with GitHub Actions
 - Explanation of workflow trigger  
 The workflow is triggered by a push to the main branch
@@ -60,11 +60,11 @@ Run the image. Build a container based on the image and check if it works as exp
 ### 3. Semantic Versioning
 #### Generating `tag`s 
 - How to see tags in a `git` repository  
-'git tag' will list all tags present in a repo.
+`git tag` will list all tags present in a repo.
 - How to generate a `tag` in a `git` repository  
-'git tag "tagName"' ex. 'git tag v1.0' will create tag for the next commit called v1.0.
+`git tag "tagName"` ex. `git tag v1.0` will create tag for the next commit called v1.0.
 - How to push a tag in a `git` repository to GitHub  
-'git push origin "tagName"' or 'git push origin --tags' to push all tags.
+`git push origin "tagName"` or `git push origin --tags` to push all tags.
 #### Semantic Versioning Container Images with GitHub Actions
 - Explanation of workflow trigger  
 This workflow will trigger on any push to main or push with a tag.
