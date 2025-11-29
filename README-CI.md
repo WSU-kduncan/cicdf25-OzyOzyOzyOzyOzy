@@ -21,5 +21,47 @@ docker pull ozyozyozy/ceg3120project3:latest
 docker run -d --restart=always -p 80:80 ozyozyozy/ceg3120project3:latest
 ```
 
-### 2.GitHub Actions & DockerHub
+### 2. GitHub Actions & DockerHub
+#### Configuring GitHub Repository Secrets:
+- How to create a PAT for authentication (**and** recommended PAT scope for this project)
+Under Account Settings in Dockerhub, select 'Personal Access Tokens". Then create a token with Read/Write scope. Giving an automated workflow delete permissions is a bad idea.
+- How to set repository Secrets for use by GitHub Actions
+While logged into your repo: Settings -> Security -> Secrets and variables -> Actions -> New repository secret. Name the secret then add the contents. You can call the secrets as a variable in your actions yml files.
+- Describe the Secrets set for this project
+For this project, my github username and a personal access token specifically made for this project was set in github secrets.
+#### CI with GitHub Actions
+- Explanation of workflow trigger
+The workflow is triggered by a push to the main branch
+- Explanation of workflow steps
+On push to main, the workflow first uses github checkout to update the repository contents to the most recent push. It then pulls the relevant metadata for docker (in this case, my docker username and the public repo to push to). The workflow then logs in to docker with the username and PAT set in secrets. Finally, the workflow uses the docker action build-push-action to build and push the image to dockerhub.
+- Explanation / highlight of values that need updated if used in a different repository
+  - changes in workflow
+The repository name needs to be changed in the yml file.
+  - changes in repository
+The only changes required in the repo is to set a PAT for the workflow and set it in the repositories secrets section.
+- **Link** to workflow file in your GitHub repository
+![Workflow File](.github/workflows/main.yml)
+#### Testing & Validating
+- How to test that your workflow did its tasking
+The easiest solution is to make a superficial push to main. Then check the ativities section to see if the workflow finished successfully. If GitHub reports that the workflow execution was successful, you can then check your dockerhub repo and see when the last build was. If it was successful, it should say there was a recent push/build.
+- How to verify that the image in DockerHub works when a container is run using the image
+Run the image. Build a container based on the image and check if it works as expected.
+- **Link** to your DockerHub repository 
+![DockerHub repo](https://hub.docker.com/r/ozyozyozy/ceg3120project3)
 
+### 3. Semantic Versioning
+#### Generating `tag`s 
+    - How to see tags in a `git` repository
+    - How to generate a `tag` in a `git` repository
+    - How to push a tag in a `git` repository to GitHub
+#### Semantic Versioning Container Images with GitHub Actions
+    - Explanation of workflow trigger
+    - Explanation of workflow steps
+    - Explanation / highlight of values that need updated if used in a different repository
+      - changes in workflow
+      - changes in repository
+    - **Link** to workflow file in your GitHub repository
+#### Testing & Validating
+    - How to test that your workflow did its tasking
+    - How to verify that the image in DockerHub works when a container is run using the image
+    - **Link** to your DockerHub repository with evidence of the tag set
