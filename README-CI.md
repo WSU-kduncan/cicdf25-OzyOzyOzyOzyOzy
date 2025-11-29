@@ -6,7 +6,7 @@ The goal of this project is to gain an understanding of github actions and how t
 - What tools are used in this project and what are their roles
 GitHub actions, secrets, and dockerhub. Git will be used for tagging and repo management. Github actions will be used to set up the required workflows and dockerhub will serve as the testing ground for the workflows.
 - Diagram of project
-
+![Diagram](images/Project4.png)
 
 ### 1. Docker file and Building Images
 - Web contents can be found here -> ![web-content](/web-content)
