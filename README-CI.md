@@ -1,5 +1,13 @@
 # Project 4: Documentation
 
+## Continuous Integration Project Overview
+- What is the goal of this project
+The goal of this project is to gain an understanding of github actions and how they work. A basic github workflow will be created to push images to a public dockerhub repo.
+- What tools are used in this project and what are their roles
+GitHub actions, secrets, and dockerhub. Git will be used for tagging and repo management. Github actions will be used to set up the required workflows and dockerhub will serve as the testing ground for the workflows.
+- Diagram of project
+
+
 ### 1. Docker file and Building Images
 - Web contents can be found here -> ![web-content](/web-content)
 - Docker file can be found here -> ![DockerFile](/web-content/Dockerfile)
@@ -71,5 +79,13 @@ Make sure the PAT for the workflow is correct and in the git repo's secrets.
 ![Workflow File](.github/workflows/main.yml)
 #### Testing & Validating
 - How to test that your workflow did its tasking
+Push a commit with a tag set and check workflows on github.
 - How to verify that the image in DockerHub works when a container is run using the image
+Pull the image and run it in a docker container.
 - **Link** to your DockerHub repository with evidence of the tag set
+![DockerHub repo](https://hub.docker.com/r/ozyozyozy/ceg3120project3)
+
+
+### References
+- https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets
+- git man page
