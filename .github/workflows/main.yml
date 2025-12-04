@@ -22,7 +22,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/ceg3120project3
           tags: |
-            type=ref,event=branch,enable=true,priority=1000,value=latest
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
             type=ref,event=tag
             
       - name: Login to Docker Hub
