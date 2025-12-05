@@ -1,0 +1,12 @@
+[Unit]
+Description=Webhook server
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/webhook -hooks /etc/webhook/hooks.yaml -verbose \
+  -ip 0.0.0.0 -port 9000
+Restart=always
+
+# Which user should the webhooks run as?
+User=ubuntu
+Group=ubuntu

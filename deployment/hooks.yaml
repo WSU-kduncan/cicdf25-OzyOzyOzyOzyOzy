@@ -1,0 +1,15 @@
+- id: dockerhub-ceg3120project3
+  execute-command: "/usr/local/bin/dockerscript.sh"
+  command-working-directory: "/usr/local/bin"
+  pass-arguments-to-command:
+    - source: payload
+      name: push_data.tag
+  incoming-payload-content-type: application/json
+  trigger-rule:
+    and:
+      - match:
+          type: value
+          value: "ozyozyozy/ceg3120project3"
+          parameter:
+            source: payload
+            name: repository.repo_name
