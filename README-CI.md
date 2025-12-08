@@ -87,5 +87,7 @@ Pull the image and run it in a docker container.
 
 
 ### References
-- https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets
+- https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets   : Used to setup secrets within public github repo.
+- https://github.com/marketplace/actions/build-and-push-docker-images : Used to find the relevant actions to build and push images to dockerhub and login to dockerhub securely through github actions.
+- Site content is recycled from project 3. Project 3 site content was generated using ChatGPT with prompt "Can you generate me a sample website with two separate html files and a css file? This is just for testing a web server. It needs no specific themeing".
 - git man page

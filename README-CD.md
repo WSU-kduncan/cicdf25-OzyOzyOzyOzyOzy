@@ -90,3 +90,9 @@ Watch the logs of the webhook. On succesful payload delivery, the webhook will c
 - How to validate that your webhook *only triggers* when requests are coming from appropriate sources (GitHub or DockerHub)  
 Curl is a good tool for this. It will attempt to trigger the webhook but sending traffic on the specified port, which is then analyzed by the webhook. If the proper conditions are not met, then the webhook will not execute the script. If there was a misconfiguration in the script, the webhook would execute the script from just using curl to invoke the webhook.
 
+## Resources/Citations
+- https://github.com/adnanh/webhook : Used for docs and guidelines for systemd and general requirements for running.
+- https://github.com/adnanh/webhook/blob/master/docs/Systemd-Activation.md
+- https://docs.docker.com/docker-hub/repos/manage/webhooks/    Used for double checking webhook setup.
+- Site content is the same as used for Projects 3 & 4. 
+
